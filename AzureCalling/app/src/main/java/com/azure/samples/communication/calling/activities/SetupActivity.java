@@ -11,6 +11,8 @@ import android.provider.Settings;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
@@ -41,6 +43,7 @@ import com.azure.samples.communication.calling.R;
 import com.azure.samples.communication.calling.helpers.JoinCallType;
 import com.azure.samples.communication.calling.helpers.PermissionHelper;
 import com.azure.samples.communication.calling.helpers.PermissionState;
+import com.azure.samples.communication.calling.view.AudioDeviceSelectionPopupWindow;
 
 import java9.util.concurrent.CompletableFuture;
 
@@ -246,12 +249,23 @@ public class SetupActivity extends AppCompatActivity {
     }
 
     private void openAudioDeviceList() {
-        checkMarkAudioAndroid.setVisibility(callingContext.isAudioAndroidOn()
-                ? View.VISIBLE : View.INVISIBLE);
-        checkMarkAudioSpeaker.setVisibility(callingContext.isAudioSpeakerOn()
-                ? View.VISIBLE : View.INVISIBLE);
-        listMenuLayer.setVisibility(View.VISIBLE);
-        audioDeviceList.setVisibility(View.VISIBLE);
+        final LayoutInflater layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        final View layout = layoutInflater.inflate(R.layout.activity_audio_selection, null);
+
+        final AudioDeviceSelectionPopupWindow audioDeviceSelectionPopupWindow =
+                new AudioDeviceSelectionPopupWindow(this);
+        audioDeviceSelectionPopupWindow.setContentView(layout);
+        audioDeviceSelectionPopupWindow.setWidth(LinearLayout.LayoutParams.MATCH_PARENT);
+        audioDeviceSelectionPopupWindow.setHeight(LinearLayout.LayoutParams.MATCH_PARENT);
+        audioDeviceSelectionPopupWindow.setFocusable(true);
+        audioDeviceSelectionPopupWindow.showAtLocation(layout, Gravity.BOTTOM, 0, 0);
+
+//        checkMarkAudioAndroid.setVisibility(callingContext.isAudioAndroidOn()
+//                ? View.VISIBLE : View.INVISIBLE);
+//        checkMarkAudioSpeaker.setVisibility(callingContext.isAudioSpeakerOn()
+//                ? View.VISIBLE : View.INVISIBLE);
+//        listMenuLayer.setVisibility(View.VISIBLE);
+//        audioDeviceList.setVisibility(View.VISIBLE);
     }
 
     private void closeAudioDeviceList() {
