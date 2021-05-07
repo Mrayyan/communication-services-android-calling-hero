@@ -5,6 +5,7 @@ package com.azure.samples.communication.calling.activities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -258,6 +259,7 @@ public class SetupActivity extends AppCompatActivity {
         audioDeviceSelectionPopupWindow.setWidth(LinearLayout.LayoutParams.MATCH_PARENT);
         audioDeviceSelectionPopupWindow.setHeight(LinearLayout.LayoutParams.MATCH_PARENT);
         audioDeviceSelectionPopupWindow.setFocusable(true);
+        audioDeviceSelectionPopupWindow.setBackgroundDrawable(new ColorDrawable(0x80000000));
         audioDeviceSelectionPopupWindow.showAtLocation(layout, Gravity.BOTTOM, 0, 0);
 
 //        checkMarkAudioAndroid.setVisibility(callingContext.isAudioAndroidOn()
