@@ -6,8 +6,8 @@
 
     <ImageView
         android:id="@+id/icon_for_audio_device_android"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:layout_marginStart="18dp"
         android:layout_marginTop="11.5dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,13 +28,14 @@
 
     <ImageButton
         android:id="@+id/check_mark_for_audio_android"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:background="@android:color/transparent"
         android:src="@drawable/ic_fluent_checkmark_24_regular"
-        android:visibility="invisible"
+        android:tint="@color/fluent_default_icon_reverse_tint"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

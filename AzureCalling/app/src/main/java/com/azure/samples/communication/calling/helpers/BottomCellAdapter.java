@@ -18,12 +18,12 @@ import java.util.List;
 
 public class BottomCellAdapter extends RecyclerView.Adapter<BottomCellViewHolder> {
     private LayoutInflater mInflater;
-    private List<BottomCellItem> bottomCellViewHolders;
+    private List<BottomCellItem> bottomCellItems;
 
 
-    public BottomCellAdapter(final Context context, final List<BottomCellItem> bottomCellViewHolders) {
+    public BottomCellAdapter(final Context context, final List<BottomCellItem> bottomCellItems) {
         this.mInflater = LayoutInflater.from(context);
-        this.bottomCellViewHolders = bottomCellViewHolders;
+        this.bottomCellItems = bottomCellItems;
     }
 
     @NonNull
@@ -35,15 +35,12 @@ public class BottomCellAdapter extends RecyclerView.Adapter<BottomCellViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull final BottomCellViewHolder holder, final int position) {
-        final BottomCellItem item = bottomCellViewHolders.get(position);
-        holder.setAvatar(item.getAvatar());
-        holder.setTitle(item.getTitle());
-        holder.setAccessoryImage(item.getAccessoryImage());
-        holder.setEnabled(item.getEnabled());
+        final BottomCellItem item = bottomCellItems.get(position);
+        holder.setCellData(item);
     }
 
     @Override
     public int getItemCount() {
-        return bottomCellViewHolders.size();
+        return bottomCellItems.size();
     }
 }

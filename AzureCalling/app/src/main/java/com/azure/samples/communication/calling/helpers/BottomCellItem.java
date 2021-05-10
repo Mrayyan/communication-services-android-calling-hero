@@ -10,13 +10,15 @@ public class BottomCellItem {
     private String title;
     private Drawable accessoryImage;
     private Boolean enabled;
+    private Runnable onClickAction;
 
     public BottomCellItem(final Drawable avatar, final String title, final Drawable accessoryImage,
-                          final Boolean enabled) {
+                          final Boolean enabled, final Runnable onClickAction) {
         this.avatar = avatar;
         this.title = title;
         this.accessoryImage = accessoryImage;
         this.enabled = enabled;
+        this.onClickAction = onClickAction;
     }
 
     public Drawable getAvatar() {
@@ -34,4 +36,6 @@ public class BottomCellItem {
     public Boolean getEnabled() {
         return enabled;
     }
+
+    public Runnable getOnClickAction() { return onClickAction; }
 }
