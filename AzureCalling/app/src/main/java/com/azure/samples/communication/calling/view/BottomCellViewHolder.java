@@ -3,7 +3,6 @@
 
 package com.azure.samples.communication.calling.view;
 
-import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -39,25 +38,5 @@ public class BottomCellViewHolder extends RecyclerView.ViewHolder {
             this.accessoryImage.setVisibility(View.INVISIBLE);
         }
         this.onClickAction = bottomCellItem.getOnClickAction();
-    }
-
-    public void setAvatar(final Drawable avatar) {
-        this.avatar.setImageDrawable(avatar);
-    }
-
-    public void setTitle(final String title) {
-        this.title.setText(title);
-    }
-
-    public void setAccessoryImage(final Drawable accessoryImage) {
-        this.accessoryImage.setImageDrawable(accessoryImage);
-    }
-
-    public void setEnabled(final Boolean enabled) {
-        if (enabled) {
-            this.accessoryImage.setVisibility(View.VISIBLE);
-        } else {
-            this.accessoryImage.setVisibility(View.INVISIBLE);
-        }
     }
 }

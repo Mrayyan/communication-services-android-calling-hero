@@ -5,7 +5,7 @@
     android:layout_height="50dp">
 
     <ImageView
-        android:id="@+id/icon_for_audio_device_android"
+        android:id="@+id/icon_for_audio_device"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginStart="18dp"
@@ -15,7 +15,7 @@
         app:srcCompat="@drawable/ic_fluent_speaker_2_24_regular" />
 
     <TextView
-        android:id="@+id/text_for_audio_device_android"
+        android:id="@+id/text_for_audio_device"
         android:layout_width="match_parent"
         android:layout_height="24dp"
         android:layout_marginStart="72dp"
@@ -27,7 +27,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/check_mark_for_audio_android"
+        android:id="@+id/check_mark_for_audio_device"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginTop="10dp"
@@ -39,4 +39,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/menu_separator_line"
+        android:layout_marginTop="47.5dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginEnd="16dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
